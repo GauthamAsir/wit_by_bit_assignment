@@ -102,15 +102,21 @@ class _DashboardPageState extends State<DashboardPage> {
                     ),
                     const Text('American, Fast Food, Burgers'),
                     Sizes.h16,
-                    Row(
+                    Wrap(
+                      runSpacing: 4.h,
                       children: [
-                        Icon(Icons.star, color: Colors.yellow, size: 18.w),
-                        Sizes.w4,
-                        Text(
-                          '4.5',
-                          style: context.lm.copyWith(
-                            fontWeight: FontWeight.w600,
-                          ),
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(Icons.star, color: Colors.yellow, size: 18.w),
+                            Sizes.w4,
+                            Text(
+                              '4.5',
+                              style: context.lm.copyWith(
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
                         ),
                         Sizes.w16,
                         SizedBox(
@@ -122,17 +128,22 @@ class _DashboardPageState extends State<DashboardPage> {
                           ),
                         ),
                         Sizes.w16,
-                        Icon(
-                          Icons.chat_outlined,
-                          color: Colors.green,
-                          size: 18.w,
-                        ),
-                        Sizes.w4,
-                        Text(
-                          '1K+ reviews',
-                          style: context.lm.copyWith(
-                            fontWeight: FontWeight.w600,
-                          ),
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              Icons.chat_outlined,
+                              color: Colors.green,
+                              size: 18.w,
+                            ),
+                            Sizes.w4,
+                            Text(
+                              '1K+ reviews',
+                              style: context.lm.copyWith(
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
                         ),
                         Sizes.w16,
                         SizedBox(
@@ -144,17 +155,22 @@ class _DashboardPageState extends State<DashboardPage> {
                           ),
                         ),
                         Sizes.w16,
-                        Icon(
-                          Icons.access_time,
-                          color: Colors.blueAccent,
-                          size: 18.w,
-                        ),
-                        Sizes.w4,
-                        Text(
-                          '15 mins',
-                          style: context.lm.copyWith(
-                            fontWeight: FontWeight.w600,
-                          ),
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              Icons.access_time,
+                              color: Colors.blueAccent,
+                              size: 18.w,
+                            ),
+                            Sizes.w4,
+                            Text(
+                              '15 mins',
+                              style: context.lm.copyWith(
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
