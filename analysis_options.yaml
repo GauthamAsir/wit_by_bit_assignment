@@ -1,0 +1,33 @@
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    # ⚡️ Performance & Optimization
+    prefer_const_constructors: true # Use `const` when possible
+    prefer_const_literals_to_create_immutables: true # Use `const` in lists, maps, sets
+    prefer_final_locals: true # Use `final` for variables that don't change
+    prefer_final_in_for_each: true # Use `final` inside forEach loops
+    unnecessary_null_checks: true # Warn if a null check is redundant
+    avoid_unnecessary_containers: true # Avoid wrapping widgets in extra `Container`s
+    prefer_interpolation_to_compose_strings: true # Use string interpolation instead of `+`
+
+    # 📏 Code Consistency & Readability
+    #    prefer_single_quotes: true # Use single quotes `'` instead of double `"`
+    #    always_put_required_named_parameters_first: true # Place required parameters before optional ones
+    require_trailing_commas: true # Enforce trailing commas in multi-line statements
+    #    always_specify_types: true # Require explicit type declarations
+    avoid_redundant_argument_values: true # Avoid passing default values explicitly
+    always_declare_return_types: true # Enforce explicit return types for better readability and type safety
+    always_put_control_body_on_new_line: true # Ensures control flow structures (if, for, while) put their body on a new line
+
+    # ⚠️ Safety & Best Practices
+    avoid_print: true # Use `debugPrint` instead of `print`
+    avoid_types_as_parameter_names: true # Prevent using type names as function parameters
+    use_build_context_synchronously: true # Prevent issues with async `BuildContext`
+
+    # 🎨 Widget Best Practices
+    prefer_const_declarations: true # Use `const` for immutable values
+    avoid_returning_null_for_future: true # Don't return null in async functions
+    use_key_in_widget_constructors: true # Always add a `Key` to custom widgets
+    prefer_mixin: true # Use mixins over abstract classes when possible
+    use_colored_box: true # Prefer `ColoredBox` over `Container(color: ...)` for better performance
