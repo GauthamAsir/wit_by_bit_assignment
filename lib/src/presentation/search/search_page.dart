@@ -10,7 +10,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../core/sizes/sizes.dart';
 import '../../core/utils/app_routes.dart';
 import '../dashboard/widgets/action_icon_buttons.dart';
-import '../dashboard/widgets/product_tile.dart';
+import '../widgets/product_tile.dart';
 
 class SearchPage extends ConsumerStatefulWidget {
   const SearchPage({super.key});

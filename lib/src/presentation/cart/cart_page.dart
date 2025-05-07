@@ -8,7 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/sizes/paddings.dart';
 import '../../core/theme/app_colors.dart';
-import '../dashboard/widgets/product_tile.dart';
+import '../widgets/product_tile.dart';
 
 class CartPage extends ConsumerWidget {
   const CartPage({super.key});

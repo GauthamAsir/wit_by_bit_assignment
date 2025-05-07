@@ -4,7 +4,7 @@ import 'package:amerika_foods/src/core/utils/app_routes.dart';
 import 'package:amerika_foods/src/core/utils/extensions.dart';
 import 'package:amerika_foods/src/presentation/dashboard/widgets/action_icon_buttons.dart';
 import 'package:amerika_foods/src/presentation/widgets/cart_bottom_tile.dart';
-import 'package:amerika_foods/src/presentation/dashboard/widgets/product_tile.dart';
+import 'package:amerika_foods/src/presentation/widgets/product_tile.dart';
 import 'package:amerika_foods/src/presentation/search/search_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

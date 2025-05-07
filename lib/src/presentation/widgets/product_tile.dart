@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../generated/assets.dart';
-import '../../../core/sizes/paddings.dart';
+import '../../../generated/assets.dart';
+import '../../core/sizes/paddings.dart';
 
 class ProductTile extends ConsumerWidget {
   const ProductTile({super.key, required this.productModel});
@@ -81,13 +81,7 @@ class ProductTile extends ConsumerWidget {
                             : AppColors.primaryColor,
                     iconData: Icons.remove,
                   ),
-                  Padding(
-                    padding: Paddings.p16.horizontally,
-                    child: Text(
-                      count.toString(),
-                      style: context.ll.copyWith(fontWeight: FontWeight.w700),
-                    ),
-                  ),
+                  AnimatedCountText(count: count),
                   ActionIconButton(
                     onTap: () {
                       ref.read(cartProvider.notifier).increment(productModel);
@@ -103,6 +97,46 @@ class ProductTile extends ConsumerWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class AnimatedCountText extends StatelessWidget {
+  final int count;
+
+  const AnimatedCountText({
+    super.key,
+    required this.count,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 50.w,
+      margin: EdgeInsets.zero,
+      padding: Paddings.p16.horizontally,
+      child: AnimatedSwitcher(
+        duration: const Duration(milliseconds: 300),
+        transitionBuilder: (child, animation) {
+          final slide = Tween<Offset>(
+            begin: const Offset(0, 0.3),
+            end: Offset.zero,
+          ).animate(animation);
+
+          return FadeTransition(
+            opacity: animation,
+            child: SlideTransition(
+              position: slide,
+              child: child,
+            ),
+          );
+        },
+        child: Text(
+          count.toString(),
+          key: ValueKey(count),
+          style: context.ll.copyWith(fontWeight: FontWeight.w700),
+        ),
+      ),
     );
   }
 }
