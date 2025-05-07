@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - master
     paths:
       - 'pubspec.yaml'
 
@@ -30,15 +31,19 @@ jobs:
         id: get_version
         run: |
           VERSION=$(grep '^version:' pubspec.yaml | sed 's/version: //' | sed 's/+.*$//')
+          echo "Extracted version: $VERSION"
           echo "VERSION=$VERSION" >> $GITHUB_ENV
           echo "version=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Check if tag exists
         id: check_tag
         run: |
+          echo "Checking for tag v${{ steps.get_version.outputs.version }}"
           if git rev-parse "v${{ steps.get_version.outputs.version }}" >/dev/null 2>&1; then
+            echo "Tag exists"
             echo "exists=true" >> $GITHUB_OUTPUT
           else
+            echo "Tag does not exist"
             echo "exists=false" >> $GITHUB_OUTPUT
           fi
 
@@ -62,7 +67,6 @@ jobs:
           tag_name: v${{ steps.get_version.outputs.version }}
           files: |
             build/app/outputs/flutter-apk/app-release.apk
-            build/web/**
           draft: false
           prerelease: false
           generate_release_notes: true
