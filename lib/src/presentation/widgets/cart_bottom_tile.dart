@@ -51,7 +51,8 @@ class CartBottomTile extends ConsumerWidget {
                       style: context.ll.copyWith(fontWeight: FontWeight.w700),
                     ),
                     const Spacer(),
-                    Flexible(
+                    SizedBox(
+                      width: 110.w,
                       child: Hero(
                         tag: 'cart_checkout_bt',
                         child: ElevatedButton(
